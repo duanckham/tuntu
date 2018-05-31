@@ -1,9 +1,10 @@
 {
   "name": "tuntu",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "吞吐",
   "repository": {},
   "author": "Duanckham",
   "license": "Apache-2.0",
+  "main": "index.js",
   "dependencies": {}
 }
