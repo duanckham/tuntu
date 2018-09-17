@@ -17,10 +17,11 @@ Examples
 
 
 ```
-import TuntuMixin from 'tuntu';
+import reactMixin from 'react-mixin';
+import tuntuMixin from 'tuntu';
 ...
 
-@reactMixin.decorate(TuntuMixin)
+@reactMixin.decorate(tuntuMixin)
 ...
 
 class AComponent extends React.Component {
@@ -53,10 +54,11 @@ class AComponent extends React.Component {
 ```
 
 ```
-import TuntuMixin from 'tuntu';
+import reactMixin from 'react-mixin';
+import tuntuMixin from 'tuntu';
 ...
 
-@reactMixin.decorate(TuntuMixin)
+@reactMixin.decorate(tuntuMixin)
 ...
 
 class BComponent extends React.Component {  

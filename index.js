@@ -1,4 +1,4 @@
-var init = function(eventName) {
+function init(eventName) {
   if (!window.tuntu) {
     window.tuntu = {};
   }
@@ -8,7 +8,7 @@ var init = function(eventName) {
   return guid();
 };
 
-var guid = function() {
+function guid() {
   function s4() {
     return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
   }
@@ -17,6 +17,8 @@ var guid = function() {
 };
 
 module.exports = {
+  _gas: [],
+
   spit: function(eventName, data) {
     if (window.tuntu) {
       var listeners = window.tuntu[eventName] || [];
@@ -45,6 +47,8 @@ module.exports = {
       });
     }
 
+    this._gas.push(id);
+
     return id;
   },
 
@@ -68,5 +72,11 @@ module.exports = {
         }
       }
     }
-  }
+  },
+
+  componentWillUnmount() {
+    for (var i = this._gas.length; i--;) {
+      this.silence(this._gas[i]);
+    }
+  },
 };
