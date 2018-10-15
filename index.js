@@ -5,15 +5,11 @@ function init(eventName) {
 
   window.tuntu[eventName] = window.tuntu[eventName] || [];
 
-  return guid();
+  return hash();
 };
 
-function guid() {
-  function s4() {
-    return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
-  }
-
-  return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+function hash() {
+  return Math.random().toString(36).substr(2, 5);
 };
 
 module.exports = {
